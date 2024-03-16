@@ -1,9 +1,9 @@
-import express from "express"
-import router from express.Router()
-const { updateProfile } = require('../controllers/userController');
-const { protect } = require('../middleware/auth');
+import { Router } from "express";
+import { verifyJWT } from "../middlewares/auth.middleware.js";
+import { updateUser } from "../controllers/updateProfile.Controller.js";
 
-// Route to update user profile
-router.put('/profile', protect, updateProfile);
+const router = Router()
 
-module.exports = router;
+router.route("/updateProfile").patch(verifyJWT,updateUser)
+
+export default router

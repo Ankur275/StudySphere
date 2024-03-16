@@ -7,7 +7,7 @@ import mongoose from "mongoose";
 
 
 export const updateUser = asyncHandler(async (req, res) => {
-  const { username, email, password, fullname, date_Of_Birth, qualification, Gender, Address, interest, phoneNumber, language } = req.body;
+  const { username, email, password, fullname, date_Of_Birth, qualification, Gender, interest, phoneNumber, language } = req.body;
 
   if (!username || !qualification || !language || !interest) {
     return res.status(400).json({ message: 'All required fields must be provided.' });
