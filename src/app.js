@@ -14,11 +14,11 @@ app.use(express.urlencoded({extended: true, limit: "16kb"}))
 app.use(express.static("public"))
 app.use(cookieParser())
 
-import loginRouter from  './routes/login.route.js'
-import signUpRouter from './routes/signUp.route.js'
-import updateProfileRouter from  './routes/updateProfile.route.js'
+import loginRouter from  '../src/routes/login.route.js'
+import signUpRouter from '../src/routes/signUp.route.js'
+import updateProfileRouter from  '../src/routes/updateProfile.route.js'
 
-app.use("/api/login" , loginRouter)
+app.use("/api/users" , loginRouter)
 app.use("/api/signUp", signUpRouter)
 app.use("/api/profile" , updateProfileRouter)
 
