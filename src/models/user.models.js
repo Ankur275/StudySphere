@@ -20,7 +20,6 @@ const userSchema = new Schema(
         },
         fullName: {
             type: String,
-            required: true,
             trim: true, 
             index: true
         },
@@ -30,19 +29,17 @@ const userSchema = new Schema(
         },
         date_Of_Birth: {
             type: Date,
-            required: true
+
         },
         Gender:{
             type :String ,
-            required:true
+
         },
         phoneNumber:{
             type: String,
-            required:true
         },
         interest:{
             type: [String],
-            required: true
         },
         language:{
             type: String
