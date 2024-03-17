@@ -1,9 +1,9 @@
 import { Router } from "express";
 import { verifyJWT } from "../middlewares/auth.middleware.js";
-import { updateUser } from "../controllers/updateProfile.Controller.js";
+import { resetPassword } from "../controllers/resetPass.Controller.js";
 
 const router = Router()
 
-router.route("/updateProfile").patch(verifyJWT,updateUser)
+router.route("/resetPassowrd").patch(verifyJWT,resetPassword)
 
 export default router
