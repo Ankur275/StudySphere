@@ -20,9 +20,9 @@ import updateProfileRouter from  '../src/routes/updateProfile.route.js'
 import resetPwdRouter from  "../src/routes/resetPwd.route.js"
 try {
     app.use("/api/login" , loginRouter)
-app.use("/api/signUp", signUpRouter)
-app.use("/api/profile" , updateProfileRouter)
-app.use("/api/resetPwd", resetPwdRouter)
+    app.use("/api/signUp", signUpRouter)
+    app.use("/api/profile" , updateProfileRouter)
+    app.use("/api/resetPwd", resetPwdRouter)
 } catch (error) {
     throw new ApiError(405, error?.message)
 }
