@@ -1,7 +1,7 @@
 import { asyncHandler } from "../utils/asyncHandler.js";
 import {ApiError} from "../utils/ApiError.js"
 import { ApiResponse } from "../utils/ApiResponse.js";
-import {GroupChat} from '../models/group_chat.models'
+import {GroupChat} from '../models/group_chat.models.js'
 
 export const createGroup = asyncHandler(async (req, res) => {
   const { name, creatorId, members } = req.body

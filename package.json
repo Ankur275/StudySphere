@@ -2,7 +2,7 @@
   "name": "studysphere",
   "version": "1.0.0",
   "description": "Backend",
-  "main": "app.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
     "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"
