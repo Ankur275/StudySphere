@@ -1,10 +1,10 @@
 import mongoose from 'mongoose'
-const Schema = mongoose.Schema;
+const Schema = mongoose.Schema
 
 const messageSchema = new Schema({
-  sender: {
-    type: Schema.Types.ObjectId,
-    ref: 'User', 
+  senderId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
     required: true
   },
   content: {
@@ -15,23 +15,79 @@ const messageSchema = new Schema({
     type: Date,
     default: Date.now
   }
-});
+})
 
-// Define the schema for a group chat conversation
 const groupChatSchema = new Schema({
   name: {
     type: String,
     required: true
   },
-  participants: [{
-    type: Schema.Types.ObjectId,
-    ref: 'User', 
+  creator: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
+  },
+  members: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
     required: true
   }],
-  messages: [messageSchema] 
-});
+  createdAt: {
+    type: Date,
+    default: Date.now
+  },
+  messages: [messageSchema]
+})
+
+export const GroupChat = mongoose.model('GroupChat', groupChatSchema)
 
 
-export const GroupChat = mongoose.model('GroupChat', groupChatSchema);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const messageSchema = new Schema({
+//   sender: {
+//     type: Schema.Types.ObjectId,
+//     ref: 'User', 
+//     required: true
+//   },
+//   content: {
+//     type: String,
+//     required: true
+//   },
+//   timestamp: {
+//     type: Date,
+//     default: Date.now
+//   }
+// });
+
+// // Define the schema for a group chat conversation
+// const groupChatSchema = new Schema({
+//   name: {
+//     type: String,
+//     required: true
+//   },
+//   participants: [{
+//     type: Schema.Types.ObjectId,
+//     ref: 'User', 
+//     required: true
+//   }],
+//   messages: [messageSchema] 
+// });
+
+
+// export const GroupChat = mongoose.model('GroupChat', groupChatSchema);
 
 
