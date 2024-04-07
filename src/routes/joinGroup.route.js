@@ -1,5 +1,5 @@
 import { Router } from "express";
-const { joinGroup } = require('../controllers/joinGroup.Controller');
+import { joinGroup } from '../controllers/joinGroup.Controller.js'
 
 const router = Router()
 

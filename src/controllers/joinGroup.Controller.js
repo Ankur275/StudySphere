@@ -4,7 +4,7 @@ import {ApiError} from "../utils/ApiError.js"
 import { ApiResponse } from "../utils/ApiResponse.js";
 
 // Controller function to join a group
-exports.joinGroup = asyncHandler(async (req, res) => {
+export const joinGroup = asyncHandler(async (req, res) => {
   const { groupId, userId } = req.body;
 
   // Validate request data
