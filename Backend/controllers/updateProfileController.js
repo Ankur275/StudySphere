@@ -6,7 +6,7 @@ import { ApiResponse } from '../utils/apiResponse.js';
 // Update user profile
 export const updateProfile = asyncHandler(async (req, res, next) => {
     const userId = req.user._id; // Assuming the user ID is coming from authentication middleware
-    const { username, email, fullName, date_Of_Birth, Gender, phoneNumber, interest, language, qualification } = req.body;
+    const { username, email, fullName, date_Of_Birth, bio, Gender, phoneNumber, interest, language, qualification } = req.body;
 
     try {
         const user = await User.findById(userId);
@@ -20,6 +20,7 @@ export const updateProfile = asyncHandler(async (req, res, next) => {
         if (email) user.email = email;
         if (fullName) user.fullName = fullName;
         if (date_Of_Birth) user.date_Of_Birth = date_Of_Birth;
+        if (bio) user.bio = bio;
         if (Gender) user.Gender = Gender;
         if (phoneNumber) user.phoneNumber = phoneNumber;
         if (interest) user.interest = interest;
