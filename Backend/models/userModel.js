@@ -24,11 +24,15 @@ const userSchema = new mongoose.Schema({
     },
     password: {
         type: String,
-        required: [true, 'Password is required']
+        required: [true, 'Password is required'],
     },
     date_Of_Birth: {
         type: Date,
 
+    },
+    bio:{
+        type:String,
+        trim:true
     },
     Gender:{
         type :String ,
